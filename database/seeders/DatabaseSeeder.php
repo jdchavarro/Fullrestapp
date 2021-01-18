@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder {
     /**
@@ -17,14 +18,20 @@ class DatabaseSeeder extends Seeder {
      */
     public function run() {
         // \App\Models\User::factory(10)->create();
-        DB::table('users')->insert([
-            'name' => "Julian D Chavarro",
-            'email' => 'jd@jd.com',
+        /* DB::table('users')->insert([
+            'username' => "jd",
+            'password' => Hash::make('password'),
+            'remember_token' => Str::random(10),
+            'rol_id' => Rol::factory(),
+            'employee_id' => Employee::factory(),
+        ]); */
+        user::factory()->create([
+            'username' => "jd",
             'password' => Hash::make('password'),
         ]);
 
         User::factory()->count(2)->create();
-        Rol::factory()->count(3)->create();
-        Employee::factory()->count(2)->create();
+        //Rol::factory()->count(3)->create();
+        //Employee::factory()->count(2)->create();
     }
 }

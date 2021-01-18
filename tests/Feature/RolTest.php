@@ -15,7 +15,7 @@ class RolTest extends TestCase {
         $user = User::factory()->create();
 
         $this->post('/login', [
-            'email' => $user->email,
+            'username' => $user->username,
             'password' => 'password',
         ]);
     }
@@ -97,8 +97,7 @@ class RolTest extends TestCase {
 
         $response = $this->delete(sprintf('/rols/%s', $rol->id));
 
-        $this->get('/rols')
-            ->assertDontSee($rol->name);
+        $this->assertDeleted($rol);
 
         $response->assertRedirect('/rols');
     }

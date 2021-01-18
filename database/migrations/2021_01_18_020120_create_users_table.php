@@ -12,22 +12,23 @@ class CreateUsersTable extends Migration {
      */
     public function up() {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            /* $table->id();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamps(); */
 
-            /* $table->id();
+            $table->id();
             $table->string('username')->unique();
             $table->string('password');
             $table->rememberToken();
             $table->foreignId('rol_id')->constrained();
             $table->foreignId('employee_id')->constrained();
             $table->timestamps();
-            $table->softDeletes(); */
+            $table->softDeletes();
+            //2014_10_12_000000_create_users_table
         });
     }
 
