@@ -21,6 +21,10 @@
                                 :active="request()->routeIs('rols.index')">
                         {{ __('Rols') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('permissions.index')"
+                                :active="request()->routeIs('permissions.index')">
+                        {{ __('Permissions') }}
+                    </x-nav-link>
                 </div>
             </div>
 

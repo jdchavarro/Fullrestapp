@@ -2,16 +2,16 @@
 
 namespace Database\Factories;
 
-use App\Models\Rol;
+use App\Models\Permission;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class RolFactory extends Factory {
+class PermissionFactory extends Factory {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Rol::class;
+    protected $model = Permission::class;
 
     /**
      * Define the model's default state.
@@ -20,7 +20,7 @@ class RolFactory extends Factory {
      */
     public function definition() {
         return [
-            'name' => $this->faker->word,
+            'type' => $this->faker->words(2, true)
         ];
     }
 }

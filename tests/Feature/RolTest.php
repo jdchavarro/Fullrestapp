@@ -54,8 +54,7 @@ class RolTest extends TestCase {
         $this->logIn();
 
         $response = $this->post('/rols', [
-            'name' => 'TestRol',
-            'permissions' => 'test permisision',
+            'name' => 'TestRol'
         ]);
 
         $this->get('/rols')
@@ -80,8 +79,7 @@ class RolTest extends TestCase {
         $this->logIn();
 
         $response = $this->put(sprintf('/rols/%s', $rol->id), [
-            'name' => 'TestRolEdited',
-            'permissions' => $rol->permissions,
+            'name' => 'TestRolEdited'
         ]);
 
         $this->get('/rols')

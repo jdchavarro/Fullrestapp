@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Rol;
+use App\Models\Permission;
 use Illuminate\Http\Request;
 
-class RolController extends Controller {
+class PermissionController extends Controller {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('rol.index', ['rols' => Rol::all()]);
+        return view('permission.index', ['permissions' => Permission::all()]);
     }
 
     /**
@@ -21,7 +21,7 @@ class RolController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('rol.create');
+        //
     }
 
     /**
@@ -31,11 +31,7 @@ class RolController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
-        $rol = new Rol;
-        $rol->name = $request->name;
-        $rol->save();
-
-        return redirect()->route('rols.index');
+        //
     }
 
     /**
@@ -44,8 +40,8 @@ class RolController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Rol $rol) {
-        return $rol;
+    public function show($id) {
+        //
     }
 
     /**
@@ -54,8 +50,8 @@ class RolController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Rol $rol) {
-        return view('rol.update', ['rol' => $rol]);
+    public function edit($id) {
+        //
     }
 
     /**
@@ -65,13 +61,8 @@ class RolController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Rol $rol) {
-
-        $rol->name = $request->name;
-
-        $rol->save();
-
-        return redirect()->route('rols.index');
+    public function update(Request $request, $id) {
+        //
     }
 
     /**
@@ -80,8 +71,7 @@ class RolController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Rol $rol) {
-        $rol->delete();
-        return redirect()->route('rols.index');
+    public function destroy($id) {
+        //
     }
 }

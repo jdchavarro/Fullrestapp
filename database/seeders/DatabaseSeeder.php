@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Employee;
+use App\Models\Permission;
 use App\Models\Rol;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -33,5 +34,6 @@ class DatabaseSeeder extends Seeder {
         User::factory()->count(2)->create();
         //Rol::factory()->count(3)->create();
         //Employee::factory()->count(2)->create();
+        Permission::factory()->count(2)->create();
     }
 }
